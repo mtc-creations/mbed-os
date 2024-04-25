@@ -140,7 +140,7 @@ endmacro(list_to_space_separated)
 
 # set toolchain flags with CMake (INIT variables will be picked up on first run)
 list_to_space_separated(CMAKE_C_FLAGS_INIT ${common_options} ${c_cxx_compile_options})
-set(CMAKE_CXX_FLAGS_INIT ${CMAKE_C_FLAGS_INIT})
+set(CMAKE_CXX_FLAGS_INIT "${CMAKE_C_FLAGS_INIT} -fno-exceptions -Wno-volatile -Wno-register") #-fno-rtti")
 list_to_space_separated(CMAKE_ASM_FLAGS_INIT ${common_options} ${asm_compile_options})
 list_to_space_separated(CMAKE_EXE_LINKER_FLAGS_INIT ${link_options})
 

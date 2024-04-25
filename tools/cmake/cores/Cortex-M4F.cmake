@@ -8,6 +8,11 @@ if(${MBED_TOOLCHAIN} STREQUAL "GCC_ARM")
         "-mcpu=cortex-m4"
         "-mfpu=fpv4-sp-d16"
         "-mfloat-abi=softfp"
+        #"-mfloat-abi=hard"
+        #"-ffunction-sections"
+        #"-fdata-sections"
+        #"-fconserve-stack"
+        "-ggdb"
     )
 elseif(${MBED_TOOLCHAIN} STREQUAL "ARM")
     list(APPEND common_options
